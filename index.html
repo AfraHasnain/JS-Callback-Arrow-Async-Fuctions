@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-Callback-Arrow-Async-Assignment</title>
+  </head>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     
+    }
+    h1 {
+      text-align: center;
+      color: black;
+      border-bottom: 3px solid black;
+      padding-bottom: 10px;
+      text-transform: uppercase;
+      font-size: large;
+      font-weight: 800;
+    }
+    h2 {
+      color: black;
+      margin-top: 30px;
+      border-left: 5px solid black;
+      padding-left: 10px;
+      text-transform: uppercase;
+      font-size: large;
+      font-weight: 800;
+    }
+    h3 {
+      color: #444;
+      margin-bottom: 5px;
+    }
+    h4 {
+      text-align: center;
+    }
+    p {
+      background: black;
+      color: #d4d4d4;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+      white-space: pre-line;
+      font-size: small;
+      font-family: "Consolas", "Courier New", monospace;
+    }
+    
+  </style>
+
+  <body>
+    <div class="container">
+      <h1>JS-Callback-Arrow-Async-Assignment</h1>
+      <h4><strong>Check console for output (F12)</strong></h4>
+      <h2>Arrow Function</h2>
+      <h3>
+        Q1. Create a calculator using arrow functions for addition, subtraction,
+        multiplication, and division.
+      </h3>
+      <p>const add = (a, b) => a + b;
+      const subtract = (a, b) => a - b;
+      const multiply = (a, b) => a * b;
+      const divide = (a, b) => a / b;
+
+      console.log("Addition: " + add(550, 680));
+      console.log("Subtraction: " + subtract(590, 760));
+      console.log("Multiplication: " + multiply(50, 8));
+      console.log("Division: " + divide(8, 1200));</p>
+      <h2>Callback Function</h2>
+      <h3>
+        Q2. Create a function that accepts an arrow function as a callback and
+        displays the result of multiplying two numbers.
+      </h3>
+      <p>function DisplayResult(a, b, callback) {
+        let result = callback(a, b);
+        console.log("Callback Result: " + result);
+      }
+
+      DisplayResult(9, 7, (x, y) => x * y);</p>
+      <h2>Async Function</h2>
+      <h3>
+        Q3. Create an async function that waits 3 seconds and then prints "Data
+        Loaded Successfully".
+      </h3>
+      <p>async function LoadData() {
+        console.log("Loading Data...");
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+        console.log("Data Loaded Successfully");
+      }
+      LoadData();</p>
+      <h2>Callback Function | Arrow Function</h2>
+      <h3>
+        Q4. Create a function that checks a student's marks using a callback: <br>
+        - Marks 40 or above: Passed. <br>
+        - Marks below 40: Failed.
+      </h3>
+      <p>function CheckMarks(marks, callback) {
+        let result = callback(marks);
+        console.log("Check Student Marks: " + marks + " " + result);
+      }
+
+      CheckMarks(73, (m) => (m >= 40 ? "Passed" : "Failed"));
+      CheckMarks(32, (m) => (m >= 40 ? "Passed" : "Failed"));</p>
+    </div>
+    <script>
+      //   Q1. Calculator using Arrow Functions
+      const add = (a, b) => a + b;
+      const subtract = (a, b) => a - b;
+      const multiply = (a, b) => a * b;
+      const divide = (a, b) => a / b;
+
+      console.log("Addition: " + add(550, 680));
+      console.log("Subtraction: " + subtract(590, 760));
+      console.log("Multiplication: " + multiply(50, 8));
+      console.log("Division: " + divide(8, 1200));
+
+      // Q2. Function that accepts Arrow Function as Callback
+
+      function DisplayResult(a, b, callback) {
+        let result = callback(a, b);
+        console.log("Callback Result: " + result);
+      }
+
+      DisplayResult(9, 7, (x, y) => x * y);
+
+      // Q3. Async Function
+
+      async function LoadData() {
+        console.log("Loading Data...");
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+        console.log("Data Loaded Successfully");
+      }
+      LoadData();
+
+      // Q4. Check Marks using Callback
+      function CheckMarks(marks, callback) {
+        let result = callback(marks);
+        console.log("Check Student Marks: " + marks + " " + result);
+      }
+
+      CheckMarks(73, (m) => (m >= 40 ? "Passed" : "Failed"));
+      CheckMarks(32, (m) => (m >= 40 ? "Passed" : "Failed"));
+    </script>
+  </body>
+</html>
